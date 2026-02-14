@@ -1,53 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PhD 神经外挂 V17.0 (The PhD Neuro-Exoskeleton)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #09090b; /* Deep Black */
-      color: #e5e5e5;
-      overflow-x: hidden;
-    }
-    .mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-    @keyframes breathe {
-      0%, 100% { transform: scale(1); opacity: 0.3; }
-      50% { transform: scale(1.5); opacity: 0.8; }
-    }
-    .animate-breathe {
-      animation: breathe 8s ease-in-out infinite;
-    }
-    /* Hide scrollbar for cleaner look */
-    ::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
-    }
-  </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
-  }
-}
-</script>
-<!-- Vite serves /index.tsx directly in dev; no external stylesheet needed by default -->
-</head>
-<body>
-  <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>v17</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #09090b; /* Deep Black */
+        color: #e5e5e5;
+        overflow-x: hidden;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.8;
+        }
+      }
+      .animate-breathe {
+        animation: breathe 8s ease-in-out infinite;
+      }
+      /* Hide scrollbar for cleaner look */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.2.4",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+          "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+        }
+      }
+    </script>
+    <!-- Vite serves /index.tsx directly in dev; no external stylesheet needed by default -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

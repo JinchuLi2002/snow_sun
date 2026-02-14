@@ -38,7 +38,7 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    const lastTriageDate = localStorage.getItem('phd_last_triage_date');
+    const lastTriageDate = localStorage.getItem('_last_triage_date');
     const currentOpDate = getOperationalDateString();
     
     // DAILY RESET LOGIC
@@ -47,16 +47,16 @@ const App: React.FC = () => {
        setShowTriage(true);
        
        // Clear Pocket (Reset Logic)
-       localStorage.removeItem('phd_ram_entries');
+       localStorage.removeItem('_ram_entries');
        setRamEntries([]);
        
     } else {
        // Same Day: Load existing state
        setShowTriage(false);
        
-       const savedLevel = localStorage.getItem('phd_energy_level');
-       const savedStrat = localStorage.getItem('phd_strategy');
-       const savedRam = localStorage.getItem('phd_ram_entries');
+       const savedLevel = localStorage.getItem('_energy_level');
+       const savedStrat = localStorage.getItem('_strategy');
+       const savedRam = localStorage.getItem('_ram_entries');
        
        if (savedLevel) setEnergyLevel(Number(savedLevel) as EnergyLevel);
        if (savedStrat) setStrategy(JSON.parse(savedStrat));
@@ -96,14 +96,14 @@ const App: React.FC = () => {
     setShowTriage(false);
     
     // Save state
-    localStorage.setItem('phd_last_triage_date', getOperationalDateString());
-    localStorage.setItem('phd_energy_level', level.toString());
-    localStorage.setItem('phd_strategy', JSON.stringify(strat));
+    localStorage.setItem('_last_triage_date', getOperationalDateString());
+    localStorage.setItem('_energy_level', level.toString());
+    localStorage.setItem('_strategy', JSON.stringify(strat));
   };
 
   const handleManualLevelChange = (level: EnergyLevel) => {
     setEnergyLevel(level);
-    localStorage.setItem('phd_energy_level', level.toString());
+    localStorage.setItem('_energy_level', level.toString());
   };
 
   // Add Item to Pocket
@@ -115,7 +115,7 @@ const App: React.FC = () => {
       };
       const updatedEntries = [newEntry, ...ramEntries];
       setRamEntries(updatedEntries);
-      localStorage.setItem('phd_ram_entries', JSON.stringify(updatedEntries));
+      localStorage.setItem('_ram_entries', JSON.stringify(updatedEntries));
   };
 
   if (mode === AppMode.SHELTER) {
@@ -135,7 +135,7 @@ const App: React.FC = () => {
       <header className="mb-8 flex flex-col md:flex-row md:justify-between md:items-center border-b border-zinc-800 pb-4 gap-4">
          <div className="flex items-center gap-2 text-zinc-400 mono text-xs uppercase tracking-[0.1em]">
             <span className="text-xl">🐿️</span>
-            <span>PhD 神经外挂 V17.0</span>
+            <span>V17.0</span>
             <span className="bg-zinc-800 px-2 py-0.5 rounded text-orange-400 font-bold ml-2">ATL SYNC</span>
          </div>
          <div className="flex gap-4 items-center justify-between md:justify-end">
