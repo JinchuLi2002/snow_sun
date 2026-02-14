@@ -1,0 +1,7 @@
+{
+  "name": "Copy of PhD Neuro-Exoskeleton",
+  "description": "A survival and productivity suit for PhD students with ADHD and executive dysfunction, featuring a 4 AM shelter mode, energy auditing, and micro-task ignition.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
